@@ -1,0 +1,47 @@
+{% extends 'member/base.html' %}
+
+{% block content %}
+
+<!--  准教授 -->
+{% for qs1 in qs1s %}
+<h3> {{qs1.publish_name}} </h3>
+<p> 身分    :       {{member.get_position_display}} </p>
+<p> 一言    :       {{member.text}} </p>
+{% endfor %}
+
+<!--  助教授 -->
+{% for qs2 in qs2s %}
+<h3> {{qs2.publish_name}} </h3>
+<p> 身分    :       {{member.get_position_display}} </p>
+<p> 一言    :       {{member.text}} </p>
+{% endfor %}
+
+<!--  技術職員 -->
+{% for qs3 in qs3s %}
+<h3> {{qs3.publish_name}} </h3>
+<p> 身分    :       {{member.get_position_display}} </p>
+<p> 一言    :       {{member.text}} </p>
+{% endfor %}
+
+<!-- M2 -->
+{% for qs8 in qs8s %}
+<h3> {{qs8.publish_name}} </h3>
+<p> 身分    :       {{member.get_position_display}} </p>
+<p> 一言    :       {{member.text}} </p>
+{% endfor %}
+
+<!-- M1 -->
+{% for qs9 in qs9s %}
+<h3> {{qs9.publish_name}} </h3>
+<p> 身分    :       {{member.get_position_display}} </p>
+<p> 一言    :       {{member.text}} </p>
+{% endfor %}
+
+<!-- B4 -->
+{% for qs10 in qs10s %}
+<p> {{qs10.publish_name}} </p>
+<p> 身分    :       {{member.get_position_display}} </p>
+<p> 一言    :       {{member.text}} </p>
+{% endfor %}
+
+{% endblock %}

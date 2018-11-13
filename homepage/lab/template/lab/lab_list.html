@@ -1,0 +1,8 @@
+{% extends 'member/base.html' %}
+
+{% block content %}
+{% for lab in lab_list %}
+<h3>{{ lab.title }}</h3>
+<p>{{ lab.text }}</p>
+{% endfor %}
+{% endblock %}
