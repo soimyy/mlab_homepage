@@ -1,0 +1,22 @@
+{% extends 'news/base.html' %}
+
+{% block content %}
+
+{% for lab in lab_list %}
+<h3>{{ lab.title }}</h3>
+<p>{{ lab.text | linebreaksbr | urlize }}</p>
+<hr>
+{% endfor %}
+
+<h3>進路</h3>
+<h6>2017年配属</h6>
+{% for qs in qs_2017 %}
+<p>{{qs.progress}}</p>
+{% endfor %}
+
+<h6>2016年配属</h6>
+{% for qs in qs_2016 %}
+<p>{{qs.progress}}</p>
+{% endfor %}
+
+{% endblock %}
