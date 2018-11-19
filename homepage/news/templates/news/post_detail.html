@@ -7,7 +7,8 @@
   <div class="card-body">
     <h2 class="card-header bg-dark text-white">{{ post.title }}</h2>
     <div class="card-body">
-      <p>{{ post.created_at }},{{ post.category }}</p>
+      <p>{{ post.created_at }} {{ post.category }}</p>
+      <p><img src="{{ post.image.url }}" alt="写真" align="center" width="600" height="400"/></p>
       {{ post.text | linebreaksbr | urlize }}
     </div>
   </div>

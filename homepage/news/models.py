@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 
+
 class Category(models.Model):
     '''カテゴリ'''
 
@@ -15,9 +16,11 @@ class Post(models.Model):
 
     title = models.CharField('タイトル',max_length=255)
     text = models.TextField('本文')
-    created_at = models.DateTimeField('作成日',default=timezone.now)
-    # img = 画像を追加する、サムネイルの表示
+    image = models.ImageField('写真',upload_to='media/',blank=True,)
     category = models.ForeignKey(Category,verbose_name='カテゴリ',on_delete=models.PROTECT)
+    # date = str(timezone.now()).replace("-",".").split(" ")[0]
+    # created_at = models.CharField('作成日',max_length=20,default=date)
+    created_at = models.DateTimeField('作成日',max_length=20,default=timezone.now)
 
     def __str__(self):
         return self.title

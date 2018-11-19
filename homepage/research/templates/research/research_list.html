@@ -1,8 +1,8 @@
-{% extends 'member/base.html' %}
+{% extends 'news/base.html' %}
 
 {% block content %}
 {% for research in research_list %}
 <h3>{{ research.title }}</h3>
-<p>{{ research.text }}</p>
+<p>{{ research.text | linebreaksbr | urlize }}</p>
 {% endfor %}
 {% endblock %}

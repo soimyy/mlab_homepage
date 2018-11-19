@@ -1,47 +1,54 @@
-{% extends 'member/base.html' %}
+{% extends 'news/base.html' %}
 
 {% block content %}
 
 <!--  准教授 -->
 {% for qs1 in qs1s %}
 <h3> {{qs1.publish_name}} </h3>
-<p> 身分    :       {{member.get_position_display}} </p>
-<p> 一言    :       {{member.text}} </p>
+<p> 身分    :       {{qs1.get_position_display}} </p>
+<p> 出身地  :       {{qs1.birthplace}} </p>
+<p> 趣味    :       {{qs1.hobby}} </p>
+<hr>
 {% endfor %}
 
 <!--  助教授 -->
 {% for qs2 in qs2s %}
 <h3> {{qs2.publish_name}} </h3>
 <p> 身分    :       {{member.get_position_display}} </p>
-<p> 一言    :       {{member.text}} </p>
+<p> 趣味    :       {{member.hobby | linebreaksbr | urlize}} </p>
+<hr>
 {% endfor %}
 
 <!--  技術職員 -->
 {% for qs3 in qs3s %}
 <h3> {{qs3.publish_name}} </h3>
 <p> 身分    :       {{member.get_position_display}} </p>
-<p> 一言    :       {{member.text}} </p>
+<p> 趣味    :       {{member.hobby| linebreaksbr | urlize}} </p>
+<hr>
 {% endfor %}
 
 <!-- M2 -->
 {% for qs8 in qs8s %}
 <h3> {{qs8.publish_name}} </h3>
 <p> 身分    :       {{member.get_position_display}} </p>
-<p> 一言    :       {{member.text}} </p>
+<p> 趣味    :       {{member.hobby| linebreaksbr | urlize}} </p>
+<hr>
 {% endfor %}
 
 <!-- M1 -->
 {% for qs9 in qs9s %}
 <h3> {{qs9.publish_name}} </h3>
 <p> 身分    :       {{member.get_position_display}} </p>
-<p> 一言    :       {{member.text}} </p>
+<p> 趣味    :       {{member.hobby| linebreaksbr | urlize}} </p>
+<hr>
 {% endfor %}
 
 <!-- B4 -->
 {% for qs10 in qs10s %}
-<p> {{qs10.publish_name}} </p>
+<h3> {{qs10.publish_name}} </h3>
 <p> 身分    :       {{member.get_position_display}} </p>
-<p> 一言    :       {{member.text}} </p>
+<p> 一言    :       {{member.hobby| linebreaksbr | urlize}} </p>
+<hr>
 {% endfor %}
 
 {% endblock %}

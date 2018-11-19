@@ -5,10 +5,12 @@ from django.db.models import Q
 
 class TemplateView(generic.ListView):
     model = Post
-    # template_name = 'news/top.html'
+    template_name = 'news/top.html'
 
-    def get_queryset(self):
-        return Post.objects.order_by('-created_at')
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs) # はじめに継承元のメソッドを呼び出す
+        context["post_list"] = Post.objects.order_by('-created_at')[:3]
+        return context
 
 # Create your views here.
 class IndexView(generic.ListView):
