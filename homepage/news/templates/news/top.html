@@ -21,13 +21,15 @@
     {% block extracss %}
     {% endblock %}
 
-    <!-- <title>{% block title%}{% endblock %}</title> -->
   </head>
 
   <!-- ナビゲーションバーの設定 -->
   <body class="news">
-    <nav class="navbar navbar-expand navbar-dark bg-dark">
-      <div class="navbar-collapse collapse show" id="navbarSupportedContent" style="">
+   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="collapse navbar-collapse" id="Navber">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="{% url 'news:top' %}">Home</a>
@@ -53,7 +55,7 @@
           </li>
           {% endif %}
         </ul>
-        <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'news:index' %}">
+        <form class="form-inline my-2 my-lg-0 ml-auto" method="GET" action="{% url 'news:index' %}"">
           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="keyword">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
@@ -80,7 +82,7 @@
                   <h3>{{ post.title }}</h3>
                 </p>
                 <class="card-text">
-                  <p>{{ post.text | linebreaksbr | truncatechars:20 }}</p>
+                  <p>{{ post.text | linebreaksbr | truncatechars:40 }}</p>
                   <p><font color="#666666">{{ post.created_at }} {{ post.category }}</font></p>
                 </p>
               </div>
