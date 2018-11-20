@@ -1,3 +1,4 @@
+
 .news, .head, {
   font-family: 'Roboto',"Noto Sans JP";
   background-color: #F4F5F7;
@@ -26,4 +27,11 @@ a, a:visited, a:focus, a:hover {
 
 .card-body{
   color:#292F33;
+}
+
+img {
+  width: 100%;
+  max-height: 100%;
+  max-width: 50%;
+  margin: 0 auto;
 }
